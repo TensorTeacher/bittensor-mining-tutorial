@@ -1,0 +1,81 @@
+# Bittensor Mining Tutorial
+
+This tutorial will guide you through the process of setting up a miner on the Bittensor Network, a blockchain for decentralized AIs. The following steps will be covered:
+
+- Step 1: Set up Subtensor
+- Step 2: Create a Wallet
+- Step 3: Set up the Miner
+- Step 4: Register Your Miner
+
+Please note that Steps 1, 2, and 4 have detailed documentation available on the official Bittensor website (https://bittensor.com/documentation/intro/index).
+
+Here, we will focus on step 3, setting up the miner, and for that we will be using the Center endpoint script.
+
+## Getting Started With The Endpoint Miner Script
+### Step 1: Set up the center-endpoint
+
+The center-endpoint is a server, where all reqests from all your miners will be forwarded to. This will make it easy to update, manage, experiment and scale your miners.
+
+Start the server, make sure it has python and pip installed, and then run:
+
+git clone center-endpoint
+cd center-endpoint
+pip3 install requirements.txt
+
+You can either modify the app.py script, or run the default that uses OpenAI:
+
+python3 app.py --openai_key "YOUR_OPENAI_KEY"
+
+To have it run in the background, you can use:
+
+nohup python3 app.py --openai_key "YOUR_OPENAI_KEY" &
+and then use tail -n 100 nohup.out to view the output.
+
+### Step 2: Set up the miner
+
+One server can run multiple miners. A rule of thumb is that about 0.5 GB of ram is needed per miner, so if your server has 8 GB of ram, you could run around 16 miners on it without running into issues.
+
+To set up the miner, you first need to install bittensor:
+
+git clone https://github.com/opentensor/bittensor
+cd bittensor
+python3 -m pip install -e .
+
+Then you need to copy in the script for the endpoint miner, by using this command:
+
+cat > endpoint_miner.py
+
+Then past in the endpoint miner script, press enter, and then ctr + d.
+
+Then, to start the miner, run:
+
+python3 --name hotkey_name --axon.port your_axon_port --wallet.hotkey hotkey_name --wallet.name your_wallet_name --logging.debug --endpoint.url url_to_where_center_endpoint_is --endpoint.verify_token your_verification_token --subtensor.network finney --subtensor.chain_endpoint your_subtensor_endpoint:9944 --netuid 1
+
+It is highly advised you use pm2 for miners instead of just running it with python3, after you install it, you can create a pm2 config file like this:
+
+cat > pm2-config.json
+
+Then paste the config file that would look something like this:
+
+{
+  "apps": [
+    {
+      "name": "miner_1",
+      "script": "endpoint_miner.py",
+      "interpreter": "python3",
+      "args": "--name hotkey_name --axon.port your_axon_port --wallet.hotkey hotkey_name --wallet.name your_wallet_name --logging.debug --endpoint.url url_to_where_center_endpoint_is --endpoint.verify_token your_verification_token --subtensor.network finney --subtensor.chain_endpoint your_subtensor_endpoint:9944 --netuid 1",
+      "error_file": "nohup1.err",
+      "out_file": "nohup1.out"
+    },
+  ]
+}
+
+You can include many miners in the same pm2-config.json file.
+
+Then start the miner(s) by running:
+
+pm2 start pm2-config.json
+
+
+
+
