@@ -20,20 +20,20 @@ The center-endpoint acts as a server that forwards requests from your miners. It
 1. Start the server and ensure that Python and pip are installed.
 2. Clone the center-endpoint repository:
    ```
-   git clone <center-endpoint-repo>
-   cd center-endpoint
+   git clone https://github.com/TensorTeacher/endpoint-center
    ```
 3. Install the required dependencies:
    ```
+   cd endpoint-center
    pip3 install -r requirements.txt
    ```
 4. You can either modify the `app.py` script or use the default script that utilizes OpenAI. To run the default script, execute the following command:
    ```
-   python3 app.py --openai_key "YOUR_OPENAI_KEY"
+   python3 app.py --openai_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want"
    ```
    If you want the script to run in the background, you can use the following command:
    ```
-   nohup python3 app.py --openai_key "YOUR_OPENAI_KEY" &
+   nohup python3 app.py --openai_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want" &
    ```
    You can view the output using `tail -n 100 nohup.out`.
 
@@ -47,13 +47,15 @@ You can run multiple miners on a single server. As a general guideline, allocate
    cd bittensor
    python3 -m pip install -e .
    ```
-2. Copy the script for the endpoint miner using the following command:
+2. You then need to add the endpoint miner script found at: https://github.com/TensorTeacher/endpoint-center/blob/main/endpoint_miner.py
+   
+   In the terminal to create a file with the endpoint miner script, enter:
    ```
    cat > endpoint_miner.py
    ```
-   Paste the endpoint miner script, press enter, and then press `Ctrl + D`.
+   Then aste the endpoint miner script, press enter, and then press `Ctrl + D`.
 
-3. Start the miner by running the following command:
+4. Start the miner by running the following command:
    ```
    python3 endpoint_miner.py --name hotkey_name --axon.port your_axon_port --wallet.hotkey hotkey_name --wallet.name your_wallet_name --logging.debug --endpoint.url url_to_where_center_endpoint_is --endpoint.verify_token your_verification_token --subtensor.network finney --subtensor.chain_endpoint your_subtensor_endpoint:9944 --netuid 1
    ```
@@ -83,7 +85,7 @@ You can run multiple miners on a single server. As a general guideline, allocate
 
    You can include multiple miners in the same pm2-config.json file.
 
-4. Start the miner(s) by running the following command:
+5. Start the miner(s) by running the following command:
    ```
    pm2 start pm2-config.json
    ```
