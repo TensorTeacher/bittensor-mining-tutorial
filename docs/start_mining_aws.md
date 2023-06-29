@@ -31,13 +31,13 @@ The center-endpoint acts as a server that forwards requests from your miners. It
    cd endpoint-center
    pip3 install -r requirements.txt
    ```
-4. You can either modify the `app.py` script or use the default script that utilizes OpenAI. To run the default script, execute the following command:
+4. You can either modify the `endpoint_center.py` script or use the default script that utilizes OpenAI. To run the default script, execute the following command:
    ```
-   python3 app.py --openai_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want"
+   python3 endpoint_center.py --openai_api_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want"
    ```
    If you want the script to run in the background, you can use the following command:
    ```
-   nohup python3 app.py --openai_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want" &
+   nohup python3 endpoint_center.py --openai_api_key "YOUR_OPENAI_KEY" --auth_token "any_auth_token_you_want" &
    ```
    You can view the output using `tail -n 100 nohup.out`.
 
