@@ -10,9 +10,9 @@ Bittensor is a decentralized neural network that allows users to train and deplo
 
 The following are the planned milestones for this repository. Checkboxes will be marked upon completion of each task:
 
-- [ ] **Base Script for Center Endpoint**: A foundational script will be provided to guide you in setting up a center endpoint on net 1. This will enable you to efficiently manage multiple miners and enhance your mining experience.
+- [x] **Base Script for Center Endpoint**: A foundational script will be provided to guide you in setting up a center endpoint on net 1. This will enable you to efficiently manage multiple miners and enhance your mining experience.
 
-- [ ] **Step-by-Step Mining Tutorial**: A detailed and documented tutorial will be provided, offering precise instructions on how to set up your mining operations for the first time. This tutorial will cover all the necessary steps to get your mining activities up and running smoothly.
+- [x] **Step-by-Step Mining Tutorial**: A detailed and documented tutorial will be provided, offering precise instructions on how to set up your mining operations for the first time. This tutorial will cover all the necessary steps to get your mining activities up and running smoothly.
 
 - [ ] **Adding Your Own Model to the Center Endpoint**: Instructions will be provided to guide you through the process of integrating your own machine learning model with the center endpoint. This will allow you to contribute your unique model to the Bittensor network and participate in the decentralized neural network ecosystem.
 
