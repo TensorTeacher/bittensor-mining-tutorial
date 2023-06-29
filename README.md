@@ -8,7 +8,7 @@ This repo show you how to start mining on Bittensor using a center-endpoint, mea
 
 Find out how to set up an endpoint-center for mining on Bittensor: https://github.com/TensorTeacher/bittensor-mining-tutorial/blob/main/docs/start_mining_aws.md
 
-You can also find video tutorials on the Youtube channel: https://www.youtube.com/@TensorTeacher-ym8mi
+You can also find video tutorials here: https://www.youtube.com/watch?v=Ko1Y4n0DEIo&list=PL0CZ9z4_TIxce1sAJr8DCCLIJNwfE8ON1
 
 ## Contributions
 
