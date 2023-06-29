@@ -1,6 +1,8 @@
 # bittensor-mining-tutorial
 
-Welcome to the `bittensor-mining-tutorial` repository by TensorTeacher! This repository is specifically designed for individuals new to mining on Bittensor. Here, you will find comprehensive tutorials and scripts to help you get started with mining on the Bittensor network.
+Welcome to the `bittensor-mining-tutorial` repository by TensorTeacher! 
+
+This repo show you how to start mining on Bittensor using a center-endpoint, meaning that all queries to your miners get forwarded to one central endpoint, for increased scalability and customizability.
 
 ## Tutorial
 
