@@ -23,7 +23,6 @@ For example, if you get the prompt "What is the capital of Egypt?", you could ha
 This way, the responses would be more academic than responses by other miners using, which might give you a better uniqueness score.
 
 
-
 ## GPU Recommendations
 Most miners use either Vast.ai for rundpod.io for GPUs.
 
