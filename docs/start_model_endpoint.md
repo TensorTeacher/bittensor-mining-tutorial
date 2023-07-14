@@ -4,23 +4,18 @@
 
 2. Run:
 ```
-apt update && apt upgrade -y
-apt install sudo
-```
-4. Run:
-```
 sudo apt update && sudo apt upgrade -y && sudo apt -y install curl dirmngr apt-transport-https lsb-release ca-certificates && curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash - && sudo apt -y install nodejs && node -v && npm install pm2 -g && printf '\n\n' 
 ```
-6. Pick a model from Huggingface
+3. Pick a model from Huggingface
 
-7. Modify the model endpoint script to use the new model:
+4. Modify the model endpoint script to use the new model:
 https://github.com/TensorTeacher/endpoint-center/blob/main/model_endpoint.py
 
-8. Copy the script to the server:
+5. Copy the script to the server:
 ```
 cat > endpoint.py
 ```
-9. Modify the pm2.json file:
+6. Modify the pm2.json file:
 ```
 {
   "apps": [
@@ -43,14 +38,14 @@ cat > endpoint.py
   ]
 }
 ```
-10. Copy it to the server:
-
+7. Copy it to the server:
+```
 cat > pm2.json
-
-12. Start the model inference:
+```
+8. Start the model inference:
 pm2 start pm2.json
 
-13. Test that it works:
+9. Test that it works:
 ```
 import requests
 import json
