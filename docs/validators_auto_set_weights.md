@@ -1,3 +1,8 @@
+To copy weights and set them for your validator, you can use the script below. You probably want to make a loop for it, to set weights frequently.
+```
+uid_to_copy=5
+wallet_name=""
+hotkey_name=""
 
 
 import bittensor as bt
@@ -45,7 +50,7 @@ netuid="1"
 chain_weights = metagraph.weights[5] #torch.zeros(subtensor.subnetwork_n(netuid=1))
 
 
-wallet = bittensor.wallet(name="catan4", hotkey="5")
+wallet = bittensor.wallet(name=wallet_name, hotkey=hotkey_name)
 
 __version__ = "1.1.1"
 version_split = __version__.split(".")
@@ -53,3 +58,5 @@ __spec_version__ = (1000 * int(version_split[0])) + (10 * int(version_split[1]))
 
 
 set_weights(moving_averaged_scores,netuid,subtensor, metagraph, wallet, __spec_version__)
+
+```
