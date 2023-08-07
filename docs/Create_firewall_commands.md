@@ -97,4 +97,6 @@ if __name__ == "__main__":
 
         # Wait for 100 blocks (1200 seconds or 20 minutes)
         bt.logging.info("Waiting for 100 blocks, sleeping")
-        time.sleep(1200)```
+        time.sleep(1200)
+
+```
