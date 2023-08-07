@@ -100,3 +100,14 @@ if __name__ == "__main__":
         time.sleep(1200)
 
 ```
+
+To use it, create a file called ufw.py by running this command:
+```
+cat > ufw.py
+```
+And then copy paste the code above into the file.
+
+Then start the process by running:
+```
+pm2 start ufw.py --name ufw
+```
