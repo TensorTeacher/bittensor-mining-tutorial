@@ -2,7 +2,7 @@ Recently, there have been ddos attacks on the bittensor network, and to protect 
 
 This code was provided by carro for blocking all non-validator IP addresses, you should run it using pm2 since you want it to be permanent:
 
-```python
+```python3
 import copy
 import time
 import torch
