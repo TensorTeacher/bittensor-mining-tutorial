@@ -1,4 +1,6 @@
-This code was provided by carro for blocking all non-validator IP addresses:
+Recently, there have been ddos attacks on the bittensor network, and to protect your miners, you can modify the server running your miners to only accept requests from validator IP address ranges.
+
+This code was provided by carro for blocking all non-validator IP addresses, you should run it using pm2 since you want it to be permanent:
 
 ```import copy
 import time
