@@ -85,7 +85,7 @@ if __name__ == "__main__":
         # Resync the metagraph
         resync_metagraph()
         
-        # get the ips of the top 50 validator
+        # get the ips of the top 60 validator
         ips = check_metagraph()
 
         # take the first two places from ip e.g.  131.186.1.1 ->  131.186.0.0
