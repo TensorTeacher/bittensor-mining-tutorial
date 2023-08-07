@@ -27,7 +27,7 @@ def resync_metagraph():
 
 def check_metagraph():
     bt.logging.info("check_metagraph()")
-    indices = torch.topk(metagraph.stake, 50).indices
+    indices = torch.topk(metagraph.stake, 60).indices
 
     uids_with_highest_stake = metagraph.uids[indices].tolist()
 
