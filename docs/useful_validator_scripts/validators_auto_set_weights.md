@@ -52,7 +52,7 @@ chain_weights = metagraph.weights[5] #torch.zeros(subtensor.subnetwork_n(netuid=
 
 wallet = bittensor.wallet(name=wallet_name, hotkey=hotkey_name)
 
-__version__ = "1.1.2"
+__version__ = "1.2.0"
 version_split = __version__.split(".")
 __spec_version__ = (1000 * int(version_split[0])) + (10 * int(version_split[1])) + (1 * int(version_split[2]))
 
